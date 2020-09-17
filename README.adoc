@@ -1,0 +1,25 @@
+= Simple Kotlin Properties Demo
+
+== Maintainer
+
+* Mark Heckler
+* mailto:mark@thehecklers.com[mark@thehecklers.com]
+* https://twitter.com/mkheck[@mkheck on Twitter]
+
+== Purpose
+
+This repo contains some streamlined examples for ingesting and using external properties from a Spring Boot Kotlin application.
+
+*_Star+watch this repo for updates!_*
+
+== Notes
+
+To get started after `git clone` of the project to a local directory:
+
+. Change directories into the project directory
+. `./gradlew build` the project
+. Run the project with `java -jar build/libs/kotlinpropsdemo-0.0.1-SNAPSHOT.jar`
+. Open another terminal window/tab and access the defined endpoint and confirm `coffee` property value using HTTPie with `http :8080/coffee` (cURL is also an option); value returned should be "Kaldi's Coffee"
+. Switch back to the terminal window/tab running the application and terminate it using CTRL+C
+. Restart the application, this time passing in a value (and thus overriding the internally-defined value) for `coffee` using this command: `java -jar build/libs/kotlinpropsdemo-0.0.1-SNAPSHOT.jar --coffee=Illy Coffee`
+. Confirm correct (externally-defined) value with HTTPie: `http :8080/coffee`; value returned should be "Illy Coffee"
